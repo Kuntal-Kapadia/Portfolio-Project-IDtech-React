@@ -7,27 +7,42 @@ import Online from './OnlineComponent';
 import Learning from './LearningComponent';
 import Virtual from './VirtualComponent';
 import Courses from './CoursesComponent';
-import { HOMEPAGECARDS } from '../shared/HomePageCards';
+import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage } from '../redux/ActionCreators';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
-import { Switch, Route, Redirect } from 'react-router-dom';
+const mapStateToProps = state => {
+    return {
+        homepagecards: state.homepagecards,
+        homepagecarousel : state.homepagecarousel,
+        learningpage: state.learningpage       
+    };
+};
+
+const mapDispatchToProps = {
+    fetchHomepagecards: () => (fetchHomepagecards()),
+    fetchHomepagecarousel: ()=> (fetchHomepagecarousel()),
+    fetchLearningpage: ()=> (fetchLearningpage())
+};
+
+
 
 class Main extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            homepagecards : HOMEPAGECARDS,
-       
-        };
 
+    componentDidMount() {
+        this.props.fetchHomepagecards();
+        this.props.fetchHomepagecarousel();    
+        this.props.fetchLearningpage();   
     }
+
 
     render() {
         return (
             <div>
                 <Header />
                 <Switch>
-                    <Route exact path='/home' render={() => <Home homepagecards={this.state.homepagecards} />} /> 
+                    <Route exact path='/home' render={() => <Home homepagecards={this.props.homepagecards} homepagecarousel={this.props.homepagecarousel}/>}/> 
                     <Route exact path='/whyID' component={WhyID} />
                     <Route exact path='/online' component={Online} />
                     <Route exact path='/online/learning' component={Learning} />
@@ -42,4 +57,4 @@ class Main extends Component {
 }
 
 
-export default Main;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

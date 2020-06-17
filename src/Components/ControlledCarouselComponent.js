@@ -48,6 +48,7 @@ class ControlledCarousel extends Component {
   }
   render() {
     const { activeIndex } = this.state;
+    
     const slides = items.map((item) => {
       return (
         <CarouselItem

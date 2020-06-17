@@ -24,12 +24,12 @@ class Header extends Component{
     render(){
         return(
             <React.Fragment>
-                <Navbar sticky="top" expand="md">
-                    <div className="container">
+                <Navbar fixed="top" expand="md">
+                    <div className="container-fluid">
                         <NavbarBrand className="mr-auto" href="/home" ><img src="/assets/images/id-logo.png" alt="ID Tech Logo"/></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
+                            <Nav navbar className="mr-8">
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">Home</NavLink>
                                 </NavItem>
@@ -48,7 +48,7 @@ class Header extends Component{
                                                 <Link to='/online/virtual'><strong>Virtual Tech Camps</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/online'><strong>Online Learning</strong></Link>
+                                                <Link to='/online'><strong>Private Leassons</strong></Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>

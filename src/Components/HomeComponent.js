@@ -1,8 +1,13 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardText,CardTitle } from 'reactstrap';
-import ControlledCarousel from './ControlledCarouselComponent';
+import { Card, CardImg, CardBody, CardText,CardTitle, UncontrolledCarousel } from 'reactstrap';
+// import { Card, CardImg, CardBody, CardText,CardTitle } from 'reactstrap';
+import { Loading } from './LoadingComponent';
+// import ControlledCarousel from './ControlledCarouselComponent';
+
+
 
 function RenderDirectoryItem({homepagecard}) {
+    
     return (
         <Card>
             <CardImg width="100%" src={homepagecard.image} alt={homepagecard.name} />
@@ -16,20 +21,39 @@ function RenderDirectoryItem({homepagecard}) {
 
 function Home(props){
    
-    const directory = props.homepagecards.map(homepagecard => {
+    const directory = props.homepagecards.homepagecards.map(homepagecard => {
         return (
             <div key={homepagecard.id} className="col-lg-4 mb-4">
-                <RenderDirectoryItem homepagecard={homepagecard}  />
+                <RenderDirectoryItem homepagecard={homepagecard} />
             </div>
         );
     });
-
+    if (props.homepagecards.isLoading) {
+        return (
+            <div className="container">
+                <div className="row">            
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    if (props.homepagecards.errMess) {
+        return (
+            <div className="container">
+                <div className="row"> 
+                    <div className="col">
+                        <h4>{props.homepagecards.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    } 
     return (
         <React.Fragment>
         <div className = "container-fluid">
-            <div className="row">
+            <div className="row"> 
                 <div className="col p-0">
-                    <ControlledCarousel />
+                    <UncontrolledCarousel items={props.homepagecarousel.homepagecarousel} indicators="false" controls="false"/> 
                 </div>
             </div>        
         </div>

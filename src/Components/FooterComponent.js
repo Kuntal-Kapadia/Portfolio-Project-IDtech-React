@@ -5,7 +5,7 @@ function Footer(props) {
     return (
         <footer className="site-footer">
             <div className ="container-fluid">       
-                <div className ="row">
+                <div className ="row row-content">
                     <div className="col text-center">
                         <a role="button" className="btn btn-link" href="tel:1-888-709-8324"><i className="fa fa-phone"></i>  1-888-709-8324</a>
                     </div>

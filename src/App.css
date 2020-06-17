@@ -110,6 +110,98 @@ h2, h3 {
 
 
 .carousel-caption{
+  color:white;
+  font-weight: 800;
+  font-size: 2.5rem;
   top: 50%;
   transform: translateY(-50%);
 }
+
+
+.carousel-item > img { 
+  width: 100%; 
+  padding:0;
+  margin:0
+}
+.carousel-indicators {
+  display:none
+}
+.carousel-inner{
+  width:100%;
+}
+
+/* for online learning */
+
+
+.description{
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;        
+} 
+
+.description h1{
+    margin:20px;
+    padding:10px;
+    color:white;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.description p{
+    margin:20px;
+    padding:10px;
+    color:white;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.a-mission {
+    letter-spacing: 2px;
+    font-size: 30px;
+    color: #df7174;
+    font-weight: 600!important;
+    font-family: Raleway,sans-serif
+}
+.online-container-fluid {
+    width: 100%;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-right: 0 auto;
+    margin-left: 0 auto;
+}
+.row-online{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.online-heading{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+
+.container-center {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    display: flex; 
+    align-items: center;    
+    margin: 0 auto;   
+  }
+
+  
+.online-container-center {
+    height: 400px;
+    width: 100%;
+    justify-content: center;
+    display: flex; 
+    align-items: center;    
+    margin: 0 auto;   
+  }
