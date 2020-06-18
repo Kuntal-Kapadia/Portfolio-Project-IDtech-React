@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
+import { baseUrl } from '../shared/baseUrl';
 
 function Learning(props){
     return (
@@ -8,7 +9,7 @@ function Learning(props){
             <div className="container-fluid">
                 <div className="row">
                     <div className = "col-12 m-0 p-0 description text-center">
-                        <img className="online-header"src={props.learningpage.headerimg} alt="Heading" />
+                        <img className="online-header" src={props.learningpage.headerimg} alt="Heading" />
                         <div className="centered">
                             <h1>Online Learning</h1>
                             <h1>Virtual Tech Camps</h1>      
@@ -29,7 +30,7 @@ function Learning(props){
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
-                    <img src={props.learningpage.virtualcampimg} alt="Virtual" width="620" height="520" />
+                   <img src= {baseUrl + props.learningpage.virtualcampimg} alt="Virtual" width="620" height="520" />
                 </div>
                 <div className="col-12 col-md-6">
                     <h2>Virtual Tech Camps</h2>
@@ -70,12 +71,12 @@ function Learning(props){
                     <Button color="success" size="lg"><Link to="/online">Prices and courses</Link></Button>
                 </div>
                 <div className="col-12 col-md-6">
-                    <img src={props.learningpage.privatelessonimg} alt="Private" width="620" height="520" />
+                    <img src={baseUrl + props.learningpage.privatelessonimg} alt="Private" width="620" height="520" />
                 </div>
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
-                    <img src={props.learningpage.teacherimg} alt="Teachers"  width="620" height="520"/>
+                    <img src={baseUrl + props.learningpage.teacherimg} alt="Teachers"  width="620" height="520"/>
                 </div>
                 <div className="col-12 col-md-6">
                     <h2>Our 1,500 tech rockstar instructors are ready to teach. Right now.</h2>

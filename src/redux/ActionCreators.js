@@ -69,3 +69,49 @@ export const addLearningpage = learningpage => ({
     type: ActionTypes.ADD_LEARNINGPAGE,
     payload: learningpage
 });
+
+//ONLINE PAGE
+export const fetchOnlinepage = () => dispatch => {
+    dispatch(onlinepageLoading());
+
+    return fetch(baseUrl + 'onlinepage')
+    .then(response => response.json())
+    .then(onlinepage => dispatch(addOnlinepage(onlinepage)));
+};
+
+export const onlinepageLoading = () => ({
+    type: ActionTypes.ONLINEPAGE_LOADING
+});
+
+export const onlinepageFailed = errMess => ({
+    type: ActionTypes.ONLINEPAGE_FAILED,
+    payload: errMess
+});
+
+export const addOnlinepage = onlinepage => ({
+    type: ActionTypes.ADD_ONLINEPAGE,
+    payload: onlinepage
+});
+
+//VIRTUALPAGE
+export const fetchVirtualpage = () => dispatch => {
+    dispatch(virtualpageLoading());
+
+    return fetch(baseUrl + 'virtualpage')
+    .then(response => response.json())
+    .then(virtualpage => dispatch(addVirtualpage(virtualpage)));
+};
+
+export const virtualpageLoading = () => ({
+    type: ActionTypes.VIRTUALPAGE_LOADING
+});
+
+export const virtualpageFailed = errMess => ({
+    type: ActionTypes.VIRTUALPAGE_FAILED,
+    payload: errMess
+});
+
+export const addVirtualpage = virtualpage => ({
+    type: ActionTypes.ADD_VIRTUALPAGE,
+    payload: virtualpage
+});

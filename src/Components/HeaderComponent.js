@@ -48,7 +48,7 @@ class Header extends Component{
                                                 <Link to='/online/virtual'><strong>Virtual Tech Camps</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/online'><strong>Private Leassons</strong></Link>
+                                                <Link to='/online/private'><strong>Private Leassons</strong></Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>

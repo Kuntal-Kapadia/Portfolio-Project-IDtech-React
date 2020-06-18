@@ -57,7 +57,7 @@ function Home(props){
                 </div>
             </div>        
         </div>
-        <div className="container">
+        <div className="container-fluid">
             <div className="row row-content">
                 <div className="col-sm-12 text-center">
                     <h2>You get more. A LOT more</h2>
