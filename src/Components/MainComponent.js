@@ -45,7 +45,8 @@ class Main extends Component {
                     <Route exact path='/home' render={() => <Home homepagecards={this.props.homepagecards} homepagecarousel={this.props.homepagecarousel}/>}/> 
                     <Route exact path='/whyID' component={WhyID} />
                     <Route exact path='/online' component={Online} />
-                    <Route exact path='/online/learning' component={Learning} />
+                    {/* <Route exact path='/online/learning' component={Learning} /> */}
+                    <Route exact path='/online/learning' render={() => <Learning learningpage={this.props.learningpage.learningpage} />} />
                     <Route exact path='/online/virtual' component={Virtual} />
                     <Route exact path='/courses' component={Courses} />
                     <Redirect to='/home' />

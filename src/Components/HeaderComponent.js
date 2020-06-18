@@ -71,7 +71,7 @@ class Header extends Component{
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>
-                                <Button variant="dm nanger">Register</Button>
+                                <Button color="success">Register</Button>
                             </Nav>
                                 
                             
