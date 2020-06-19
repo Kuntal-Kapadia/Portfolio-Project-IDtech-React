@@ -30,7 +30,7 @@ function Learning(props){
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
-                   <img src= {baseUrl + props.learningpage.virtualcampimg} alt="Virtual" width="620" height="520" />
+                   <img className="img-fluid" src= {baseUrl + props.learningpage.virtualcampimg} alt="Virtual" />
                 </div>
                 <div className="col-12 col-md-6">
                     <h2>Virtual Tech Camps</h2>
@@ -71,12 +71,12 @@ function Learning(props){
                     <Button color="success" size="lg"><Link to="/online">Prices and courses</Link></Button>
                 </div>
                 <div className="col-12 col-md-6">
-                    <img src={baseUrl + props.learningpage.privatelessonimg} alt="Private" width="620" height="520" />
+                    <img className="img-fluid" src={baseUrl + props.learningpage.privatelessonimg} alt="Private" />
                 </div>
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
-                    <img src={baseUrl + props.learningpage.teacherimg} alt="Teachers"  width="620" height="520"/>
+                    <img className="img-fluid" src={baseUrl + props.learningpage.teacherimg} alt="Teachers" />
                 </div>
                 <div className="col-12 col-md-6">
                     <h2>Our 1,500 tech rockstar instructors are ready to teach. Right now.</h2>

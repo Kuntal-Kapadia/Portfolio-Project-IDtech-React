@@ -115,3 +115,51 @@ export const addVirtualpage = virtualpage => ({
     type: ActionTypes.ADD_VIRTUALPAGE,
     payload: virtualpage
 });
+
+
+//WHYIDPAGE
+export const fetchWhyidpage = () => dispatch => {
+    dispatch(whyidpageLoading());
+
+    return fetch(baseUrl + 'whyidpage')
+    .then(response => response.json())
+    .then(whyidpage => dispatch(addWhyidpage(whyidpage)));
+};
+
+export const whyidpageLoading = () => ({
+    type: ActionTypes.WHYIDPAGE_LOADING
+});
+
+export const whyidpageFailed = errMess => ({
+    type: ActionTypes.WHYIDPAGE_FAILED,
+    payload: errMess
+});
+
+export const addWhyidpage = whyidpage => ({
+    type: ActionTypes.ADD_WHYIDPAGE,
+    payload: whyidpage
+});
+
+
+//REGISTERPAGE
+export const fetchRegisterpage = () => dispatch => {
+    dispatch(registerpageLoading());
+
+    return fetch(baseUrl + 'registerpage')
+    .then(response => response.json())
+    .then(registerpage => dispatch(addRegisterpage(registerpage)));
+};
+
+export const registerpageLoading = () => ({
+    type: ActionTypes.REGISTERPAGE_LOADING
+});
+
+export const registerpageFailed = errMess => ({
+    type: ActionTypes.REGISTERPAGE_FAILED,
+    payload: errMess
+});
+
+export const addRegisterpage = registerpage => ({
+    type: ActionTypes.ADD_REGISTERPAGE,
+    payload: registerpage
+});

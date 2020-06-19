@@ -3,6 +3,7 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Uncontrolle
 import { NavLink, Link} from 'react-router-dom';
 
 
+
 class Header extends Component{
     constructor(props) {
         super(props);
@@ -27,7 +28,7 @@ class Header extends Component{
                 <Navbar fixed="top" expand="md">
                     <div className="container-fluid">
                         <NavbarBrand className="mr-auto" href="/home" ><img src="/assets/images/id-logo.png" alt="ID Tech Logo"/></NavbarBrand>
-                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarToggler onClick={this.toggleNav}/>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar className="mr-8">
                                 <NavItem>
@@ -42,13 +43,13 @@ class Header extends Component{
                                         </DropdownToggle>
                                         <DropdownMenu  right>
                                             <DropdownItem>
-                                                <Link class Name="DropdownColor" to='/online/learning'><strong>Learning and Camps</strong></Link>
+                                                <Link class="dropdown-item" to='/online/learning'><strong>Learning and Camps</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/online/virtual'><strong>Virtual Tech Camps</strong></Link>
+                                                <Link class="dropdown-item" to='/online/virtual'><strong>Virtual Tech Camps</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/online/private'><strong>Private Leassons</strong></Link>
+                                                <Link class="dropdown-item" to='/online/private'><strong>Private Leassons</strong></Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>
@@ -58,20 +59,20 @@ class Header extends Component{
                                         </DropdownToggle>
                                         <DropdownMenu  right>
                                             <DropdownItem>
-                                                <Link  to='/courses'><strong>CODING</strong></Link>
+                                                <Link class="dropdown-item" to='/courses'><strong>CODING</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/courses'><strong>GAME DEV</strong></Link>
+                                                <Link class="dropdown-item" to='/courses'><strong>GAME DEV</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/courses'><strong>Robotics</strong></Link>
+                                                <Link class="dropdown-item" to='/courses'><strong>ROBOTICS</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link to='/courses'><strong>CREATIVE</strong></Link>
+                                                <Link class="dropdown-item" to='/courses'><strong>CREATIVE</strong></Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>
-                                <Button color="success">Register</Button>
+                                <Button color="success"><Link className="register-button" to="/register">Register</Link></Button>
                             </Nav>
                                 
                             
