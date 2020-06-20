@@ -163,3 +163,72 @@ export const addRegisterpage = registerpage => ({
     type: ActionTypes.ADD_REGISTERPAGE,
     payload: registerpage
 });
+
+//COURSESPAGE
+export const fetchCoursespage = () => dispatch => {
+    dispatch(coursespageLoading());
+
+    return fetch(baseUrl + 'coursespage')
+    .then(response => response.json())
+    .then(coursespage => dispatch(addCoursespage(coursespage)));
+};
+
+export const coursespageLoading = () => ({
+    type: ActionTypes.COURSESPAGE_LOADING
+});
+
+export const coursespageFailed = errMess => ({
+    type: ActionTypes.COURSESPAGE_FAILED,
+    payload: errMess
+});
+
+export const addCoursespage = coursespage => ({
+    type: ActionTypes.ADD_COURSESPAGE,
+    payload: coursespage
+});
+
+//COURSESPAGE - SIDEBAR
+export const fetchCoursespagesidebar = () => dispatch => {
+    dispatch(coursespagesidebarLoading());
+
+    return fetch(baseUrl + 'coursespagesidebar')
+    .then(response => response.json())
+    .then(coursespagesidebar => dispatch(addCoursespagesidebar(coursespagesidebar)));
+};
+
+export const coursespagesidebarLoading = () => ({
+    type: ActionTypes.COURSESPAGESIDEBAR_LOADING
+});
+
+export const coursespagesidebarFailed = errMess => ({
+    type: ActionTypes.COURSESPAGESIDEBAR_FAILED,
+    payload: errMess
+});
+
+export const addCoursespagesidebar = coursespagesidebar => ({
+    type: ActionTypes.ADD_COURSESPAGESIDEBAR,
+    payload: coursespagesidebar
+});
+
+//COURSESPAGE - SEARCHRESULTS
+export const fetchCoursespagesearchresults = () => dispatch => {
+    dispatch(coursespagesearchresultsLoading());
+
+    return fetch(baseUrl + 'coursespagesearchresults')
+    .then(response => response.json())
+    .then(coursespagesearchresults => dispatch(addCoursespagesearchresults(coursespagesearchresults)));
+};
+
+export const coursespagesearchresultsLoading = () => ({
+    type: ActionTypes.COURSESPAGESEARCHRESULTS_LOADING
+});
+
+export const coursespagesearchresultsFailed = errMess => ({
+    type: ActionTypes.COURSESPAGESEARCHRESULTS_FAILED,
+    payload: errMess
+});
+
+export const addCoursespagesearchresults = coursespagesearchresults => ({
+    type: ActionTypes.ADD_COURSESPAGESEARCHRESULTS,
+    payload: coursespagesearchresults
+});

@@ -9,7 +9,7 @@ import Learning from './LearningComponent';
 import Virtual from './VirtualComponent';
 import Courses from './CoursesComponent';
 import Register from './RegisterComponent';
-import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage  } from '../redux/ActionCreators';
+import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -22,7 +22,10 @@ const mapStateToProps = state => {
         onlinepage: state.onlinepage,
         virtualpage: state.virtualpage,
         whyidpage: state.whyidpage,
-        registerpage: state.registerpage
+        registerpage: state.registerpage,
+        coursespage: state.coursespage,
+        coursespagesidebar: state.coursespagesidebar,
+        coursespagesearchresults: state.coursespagesearchresults
     };
 };
 
@@ -34,6 +37,9 @@ const mapDispatchToProps = {
     fetchVirtualpage: ()=> (fetchVirtualpage()),
     fetchWhyidpage: ()=> (fetchWhyidpage()),
     fetchRegisterpage: ()=> (fetchRegisterpage()),
+    fetchCoursespage: ()=> (fetchCoursespage()),
+    fetchCoursespagesidebar: ()=> (fetchCoursespagesidebar()),
+    fetchCoursespagesearchresults: ()=> (fetchCoursespagesearchresults()),
     resetFeedbackForm: () => (actions.reset('feedbackForm')),
 };
 
@@ -49,6 +55,9 @@ class Main extends Component {
         this.props.fetchVirtualpage();  
         this.props.fetchWhyidpage(); 
         this.props.fetchRegisterpage();
+        this.props.fetchCoursespage();
+        this.props.fetchCoursespagesidebar();
+        this.props.fetchCoursespagesearchresults();
     }
 
 
@@ -62,7 +71,7 @@ class Main extends Component {
                     <Route exact path='/online/private' render={() => <Online onlinepage={this.props.onlinepage.onlinepage}/>} />
                     <Route exact path='/online/learning' render={() => <Learning learningpage={this.props.learningpage.learningpage} />} />
                     <Route exact path='/online/virtual' render={() => <Virtual virtualpage={this.props.virtualpage.virtualpage} />} />
-                    <Route exact path='/courses' component={Courses} />
+                    <Route exact path='/courses' render={() => <Courses coursespage={this.props.coursespage.coursespage} sidebar={this.props.coursespagesidebar} searchresults={this.props.coursespagesearchresults}/>} />
                     <Route exact path='/register' render={() => <Register registerpage={this.props.registerpage.registerpage} resetFeedbackForm={this.props.resetFeedbackForm}/>} />
                     <Redirect to='/home' />
                 </Switch>

@@ -7,6 +7,9 @@ import { Onlinepage } from './onlinepage';
 import { Virtualpage } from './virtualpage';
 import { Whyidpage } from './whyidpage';
 import { Registerpage } from './registerpage';
+import { Coursespage } from './coursespage';
+import { Coursespagesidebar } from './coursespagesidebar';
+import { Coursespagesearchresults } from './coursespagesearchresults';
 import { InitialFeedback } from './forms';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
@@ -22,6 +25,9 @@ export const ConfigureStore = () => {
             virtualpage: Virtualpage,
             whyidpage: Whyidpage,
             registerpage:Registerpage, 
+            coursespage:Coursespage, 
+            coursespagesidebar:Coursespagesidebar, 
+            coursespagesearchresults:Coursespagesearchresults, 
             ...createForms({
                 feedbackForm: InitialFeedback
             })
