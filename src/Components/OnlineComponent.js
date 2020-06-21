@@ -1,5 +1,55 @@
 import React from 'react';
 import { baseUrl } from '../shared/baseUrl';
+import { Card, CardImg, CardBody, CardText,CardTitle } from 'reactstrap';
+import { Loading } from './LoadingComponent';
+
+function RenderDirectoryItem({onlinepagecard}) {
+    
+    return (
+        <Card>
+            <CardImg width="100%" src={onlinepagecard.image} alt={onlinepagecard.name} />
+            <CardBody>
+                <h5><CardTitle>{onlinepagecard.name}</CardTitle></h5>
+                <p><CardText>{onlinepagecard.description}</CardText></p>
+            </CardBody>
+        </Card>
+    );
+}
+
+function RenderOnlinepagecards(props){
+
+    const directory = props.onlinepagecards.onlinepagecards.map(onlinepagecard => {
+        return (
+            <div key={onlinepagecard.id} className="col-lg-4 mb-4">
+                <RenderDirectoryItem onlinepagecard={onlinepagecard} />
+            </div>
+        );
+    });
+    // if (props.onlinepagecards.isLoading) {
+    //     return (
+    //         <div className="container">
+    //             <div className="row">            
+    //                 <Loading />
+    //             </div>
+    //         </div>
+    //     );
+    // }
+    // if (props.onlinepagecards.errMess) {
+    //     return (
+    //         <div className="container">
+    //             <div className="row"> 
+    //                 <div className="col">
+    //                     <h4>{props.onlinepagecards.errMess}</h4>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     );
+    // } 
+    return (
+        <div classname="row">
+            {directory}
+        </div>)
+}
 
 function Online(props){
     return (
@@ -19,7 +69,8 @@ function Online(props){
                 <div className="row row-online">
                     <div className="col-sm-12 text-center">
                             <h2 >Online Private Lesson</h2>
-                            <p>Learn to code. Discover AI. Mod Minecraft. Create with Roblox. Develop a video game with Unreal. Your child can choose from one of our themes, or customize their own! With 1-on-1 attention from our iD Certified Instructors, they’ll build in-demand skills and create a completely personalized project—all from the comfort of home. <strong>For all skill levels, ages 7-19.</strong></p> </div>
+                            <p>Learn to code. Discover AI. Mod Minecraft. Create with Roblox. Develop a video game with Unreal. Your child can choose from one of our themes, or customize their own! With 1-on-1 attention from our iD Certified Instructors, they’ll build in-demand skills and create a completely personalized project—all from the comfort of home. <strong>For all skill levels, ages 7-19.</strong></p> 
+                    </div>
                     <div className="col-sm-12 text-center">
                         <h5><strong>Start learning today, from anywhere in the world.</strong></h5>
                     </div>
@@ -49,20 +100,23 @@ function Online(props){
                             </li>
                         </ul>
 
+                    </div>
                 </div>
-            </div>
-    
-             
+            </div> 
+
             <div className="container">
                 <div className="row row-content">
                         <div className="col-sm-12 text-center">
                             <h2>New 5-packs for Spring 2020</h2>
                             <p >Choose an awesome project-based course. Match with the coolest instructors on the planet. Build something monumental!&nbsp;When you purchase five 60-minute lessons, you'll save 10% off our individual lesson price.</p>
                         </div>
-                    </div>
-                
                 </div>
-            </div> 
+                <div class="row row-content">    
+                    <RenderOnlinepagecards onlinepagecards={props.onlinepagecards}/>
+                </div>
+                
+            </div>
+      
        
     </React.Fragment>    
     )

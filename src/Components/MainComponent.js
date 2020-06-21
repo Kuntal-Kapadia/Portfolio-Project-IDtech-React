@@ -9,7 +9,7 @@ import Learning from './LearningComponent';
 import Virtual from './VirtualComponent';
 import Courses from './CoursesComponent';
 import Register from './RegisterComponent';
-import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults } from '../redux/ActionCreators';
+import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults, fetchOnlinepagecards } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -20,12 +20,14 @@ const mapStateToProps = state => {
         homepagecarousel : state.homepagecarousel,
         learningpage: state.learningpage,
         onlinepage: state.onlinepage,
+        onlinepagecards: state.onlinepagecards,
         virtualpage: state.virtualpage,
         whyidpage: state.whyidpage,
         registerpage: state.registerpage,
         coursespage: state.coursespage,
         coursespagesidebar: state.coursespagesidebar,
         coursespagesearchresults: state.coursespagesearchresults
+
     };
 };
 
@@ -34,6 +36,7 @@ const mapDispatchToProps = {
     fetchHomepagecarousel: ()=> (fetchHomepagecarousel()),
     fetchLearningpage: ()=> (fetchLearningpage()),
     fetchOnlinepage: ()=> (fetchOnlinepage()),
+    fetchOnlinepagecards: () => (fetchOnlinepagecards()),
     fetchVirtualpage: ()=> (fetchVirtualpage()),
     fetchWhyidpage: ()=> (fetchWhyidpage()),
     fetchRegisterpage: ()=> (fetchRegisterpage()),
@@ -68,7 +71,7 @@ class Main extends Component {
                 <Switch>
                     <Route exact path='/home' render={() => <Home homepagecards={this.props.homepagecards} homepagecarousel={this.props.homepagecarousel}/>}/> 
                     <Route exact path='/whyID' render={() => <WhyID whyidpage={this.props.whyidpage.whyidpage}/>} />
-                    <Route exact path='/online/private' render={() => <Online onlinepage={this.props.onlinepage.onlinepage}/>} />
+                    <Route exact path='/online/private' render={() => <Online onlinepage={this.props.onlinepage.onlinepage} onlinepagecards={this.props.onlinepagecards}/>} />
                     <Route exact path='/online/learning' render={() => <Learning learningpage={this.props.learningpage.learningpage} />} />
                     <Route exact path='/online/virtual' render={() => <Virtual virtualpage={this.props.virtualpage.virtualpage} />} />
                     <Route exact path='/courses' render={() => <Courses coursespage={this.props.coursespage.coursespage} sidebar={this.props.coursespagesidebar} searchresults={this.props.coursespagesearchresults}/>} />

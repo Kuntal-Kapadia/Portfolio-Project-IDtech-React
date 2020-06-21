@@ -71,6 +71,7 @@ Button{
 
 .nav-link{ 
   color:#7eb444; 
+  text-shadow: 1px 1px black;
   font-weight: 600;
   cursor: pointer;
 }
@@ -81,7 +82,7 @@ Button{
 }
 .nav-link { margin-right: 1em !important;}
 
-.nav-link:hover{ color: black !important } 
+.nav-link:hover{ color: black !important; text-shadow: none } 
 
 .navbar-collapse{ justify-content: flex-end ;}
 
@@ -99,10 +100,27 @@ Button{
   background-color: #fff;
   margin-bottom: 5px;
 }
-.register-button {
-  color:white
+.btn-success{
+  background-color:#7eb444;
+  color:white;
+  text-shadow: 1px 1px black;
+  border:none;
 }
-.register-button:hover{ color: black !important } 
+.learning-link{
+  color:white;
+  text-shadow: 1px 1px black;
+}
+.learning-link:hover{color: black !important; text-shadow: none;}
+
+.background{
+  background-color:#7eb444;
+}
+.register-button {
+  color:white;
+  text-shadow: 1px 1px black;
+}
+.register-button:hover{ color: black !important; text-shadow: none; } 
+
 .dropdown-menu {
   background-color: whitesmoke;
   size : auto;
@@ -137,9 +155,15 @@ Button{
   overflow: hidden
 }
 
+.carousel-caption h3{
+  top: 50%;
+  transform: translateY(-50%);
+  display:none;
+}
 
-.carousel-caption{
+.carousel-caption p{
   color:white;
+  text-shadow: 3px 3px black ;
   font-weight: 800;
   font-size: 2.5rem;
   top: 50%;
@@ -172,6 +196,7 @@ Button{
     margin:20px;
     padding:10px;
     color:white;
+    text-shadow: 2px 2px black;
     font-size: 3rem;
     font-weight: 600;
 }
@@ -179,6 +204,7 @@ Button{
     margin:20px;
     padding:10px;
     color:white;
+    text-shadow: 2px 2px black;
     font-size: 20px;
     line-height: 1.5;
 }
@@ -433,5 +459,6 @@ Button{
 }
 
 .row-separator {
-  padding : 50px;
+  padding-top : 25px;
+  margin-top: 25px
 }

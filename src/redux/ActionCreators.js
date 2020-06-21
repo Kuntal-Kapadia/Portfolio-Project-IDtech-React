@@ -232,3 +232,26 @@ export const addCoursespagesearchresults = coursespagesearchresults => ({
     type: ActionTypes.ADD_COURSESPAGESEARCHRESULTS,
     payload: coursespagesearchresults
 });
+
+//ONLINEPAGECARDS
+export const fetchOnlinepagecards = () => dispatch => {
+    dispatch(onlinepagecardsLoading());
+
+    return fetch(baseUrl + 'onlinepagecards')
+    .then(response => response.json())
+    .then(onlinepagecards => dispatch(addOnlinepagecards(onlinepagecards)));
+};
+
+export const onlinepagecardsLoading = () => ({
+    type: ActionTypes.ONLINEPAGECARDS_LOADING
+});
+
+export const onlinepagecardsFailed = errMess => ({
+    type: ActionTypes.ONLINEPAGECARDS_FAILED,
+    payload: errMess
+});
+
+export const addOnlinepagecards = onlinepagecards => ({
+    type: ActionTypes.ADD_ONLINEPAGECARDS,
+    payload: onlinepagecards
+});

@@ -47,8 +47,8 @@ function Learning(props){
                         <li><strong>5 students max per instructor</strong>, blending personalized learning and time to socialize</li>
                         <li><strong>Personalized instructor feedback</strong> delivered via email so you can track your child's success</li>
                     </ul>
-                    <Button  color="success" size="lg"><Link to="/online/virtual"><strong>View Courses &amp; Info</strong></Link></Button>
-                </div>
+                    <Button color="success" size="lg"><Link className="learning-link" to="/online/virtual"><strong>View Courses &amp; Info</strong></Link></Button></div>
+
             </div>
             <div className="row row-content">
                 <div className="col-12 col-md-6">
@@ -68,13 +68,13 @@ function Learning(props){
                         <li><strong>NEW!&nbsp;</strong>Your child can bring a sibling (or friend) to their sessions for free. When times are tough, we band together.</li>
                     </ul>
 
-                    <Button color="success" size="lg"><Link to="/online">Prices and courses</Link></Button>
+                    <Button color="success" size="lg"><Link className="learning-link" to="/online/private">Prices and courses</Link></Button>
                 </div>
                 <div className="col-12 col-md-6">
                     <img className="img-fluid" src={baseUrl + props.learningpage.privatelessonimg} alt="Private" />
                 </div>
             </div>
-            <div className="row row-content">
+            <div className="row row-content background">
                 <div className="col-12 col-md-6">
                     <img className="img-fluid" src={baseUrl + props.learningpage.teacherimg} alt="Teachers" />
                 </div>

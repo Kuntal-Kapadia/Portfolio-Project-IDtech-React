@@ -47,7 +47,7 @@ function Virtual(props){
                         <li><strong>All the magic of camp&nbsp;</strong>including games, challenges, and legendary iD traditions you can't find anywhere else</li>
                     </ul>
                     <br></br>
-                <Button  color="success" size="lg"><Link to="/online/virtual"><strong>Prices and courses</strong></Link></Button>
+                <Button  color="success" size="lg"><Link className="learning-link" to="/online/virtual"><strong>Prices and courses</strong></Link></Button>
                 </div>
             </div>
         </div>    

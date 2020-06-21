@@ -4,6 +4,7 @@ import { Homepagecards } from './homepagecards';
 import { Homepagecarousel } from './homepagecarousel';
 import { Learningpage } from './learningpage';
 import { Onlinepage } from './onlinepage';
+import { Onlinepagecards } from './onlinepagecards';
 import { Virtualpage } from './virtualpage';
 import { Whyidpage } from './whyidpage';
 import { Registerpage } from './registerpage';
@@ -22,6 +23,7 @@ export const ConfigureStore = () => {
             homepagecarousel : Homepagecarousel,
             learningpage: Learningpage,
             onlinepage: Onlinepage,
+            onlinepagecards: Onlinepagecards,
             virtualpage: Virtualpage,
             whyidpage: Whyidpage,
             registerpage:Registerpage, 
@@ -33,6 +35,6 @@ export const ConfigureStore = () => {
             })
         }), applyMiddleware(thunk,logger)
     );
-
+        console.log(store.getState());
     return store;
 }

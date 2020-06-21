@@ -35,9 +35,9 @@ function WhyID(props){
             </div>
         </div>
          
-        <div class="container">  
+        <div class="container-fluid">  
             <div class="row row-content">
-                <div class="col-md-6">
+                <div class="col-md-6 justify-content-center">
                     <img className="img-fluid" src={props.whyidpage.img1} alt="First"/>
                 </div>
                 <div class="col-md-6">
@@ -48,7 +48,7 @@ function WhyID(props){
                 </div>
             </div>
         </div>   
-        <div class="container"> 
+        <div class="container-fluid"> 
             <div class="row row-content ">
                 <div class="col-md-6">
                     <h2>Tech rockstar instructors</h2>
@@ -62,7 +62,7 @@ function WhyID(props){
             </div>
         </div>
 
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row row-content">
                     <div class="col-md-6">
                         <img className="img-fluid" src={props.whyidpage.img2} alt="Second"/>
@@ -73,7 +73,7 @@ function WhyID(props){
                     </div>
                 </div>
             </div>    
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row row-content ">
                     <div class="col-md-6">
                         <h2>Gamified learning for long-term success</h2>
@@ -85,7 +85,7 @@ function WhyID(props){
                 </div> 
             </div>
             
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row row-content ">
                     <div class="col-md-6">
                         <h3>Monthly online iD Master Classes&nbsp;($300 value)</h3>
