@@ -279,8 +279,8 @@ export const fetchCoursespage = () => dispatch => {
     error => {
         const errMess = new Error(error.message);
         throw errMess;
-    }
-)
+        }
+    )
     .then(response => response.json())
     .then(coursespage => dispatch(addCoursespage(coursespage)));
 };
@@ -316,8 +316,8 @@ export const fetchCoursespagesidebar = () => dispatch => {
     error => {
         const errMess = new Error(error.message);
         throw errMess;
-    }
-)
+        }
+    )
     .then(response => response.json())
     .then(coursespagesidebar => dispatch(addCoursespagesidebar(coursespagesidebar)));
 };
@@ -353,8 +353,8 @@ export const fetchCoursespagesearchresults = () => dispatch => {
     error => {
         const errMess = new Error(error.message);
         throw errMess;
-    }
-)
+        }
+    )
     .then(response => response.json())
     .then(coursespagesearchresults => dispatch(addCoursespagesearchresults(coursespagesearchresults)));
 };
@@ -390,8 +390,8 @@ export const fetchOnlinepagecards = () => dispatch => {
     error => {
         const errMess = new Error(error.message);
         throw errMess;
-    }
-)
+        }
+    )
     .then(response => response.json())
     .then(onlinepagecards => dispatch(addOnlinepagecards(onlinepagecards)));
 };
