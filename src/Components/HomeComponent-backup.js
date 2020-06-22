@@ -16,14 +16,6 @@ import ControlledCarousel from './ControlledCarouselComponent';
 
 function Home(props){
    
-    // const directory = props.homepagecards.map(homepagecard => {
-    //     return (
-    //         <div key={homepagecard.id} className="col-lg-4 mb-4">
-    //             <RenderDirectoryItem homepagecard={homepagecard}  />
-    //         </div>
-    //     );
-    // });
-
     return (
 
         <div className="container-fluid px-0" >

@@ -25,26 +25,26 @@ function RenderOnlinepagecards(props){
             </div>
         );
     });
-    // if (props.onlinepagecards.isLoading) {
-    //     return (
-    //         <div className="container">
-    //             <div className="row">            
-    //                 <Loading />
-    //             </div>
-    //         </div>
-    //     );
-    // }
-    // if (props.onlinepagecards.errMess) {
-    //     return (
-    //         <div className="container">
-    //             <div className="row"> 
-    //                 <div className="col">
-    //                     <h4>{props.onlinepagecards.errMess}</h4>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // } 
+    if (props.onlinepagecards.isLoading) {
+        return (
+            <div className="container">
+                <div className="row">            
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    if (props.onlinepagecards.errMess) {
+        return (
+            <div className="container">
+                <div className="row"> 
+                    <div className="col">
+                        <h4>{props.onlinepagecards.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    } 
     return (
         <div className="row">
             {directory}

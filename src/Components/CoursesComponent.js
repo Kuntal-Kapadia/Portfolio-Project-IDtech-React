@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
-// import { Loading } from './LoadingComponent';
+import { Loading } from './LoadingComponent';
 
 function RenderSidebar(props){
     
@@ -29,7 +29,26 @@ function RenderSidebar(props){
             </React.Fragment>
         )
     });
-
+    if (props.sidebar.isLoading) {
+        return (
+            <div className="container">
+                <div className="row">            
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    if (props.sidebar.errMess) {
+        return (
+            <div className="container">
+                <div className="row"> 
+                    <div className="col">
+                        <h4>{props.sidebar.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
    
     return(
         <div>
@@ -64,7 +83,26 @@ function RenderSearchResults(props){
             </React.Fragment>    
         )
         });        
-
+        if (props.searchresults.isLoading) {
+            return (
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        if (props.searchresults.errMess) {
+            return (
+                <div className="container">
+                    <div className="row"> 
+                        <div className="col">
+                            <h4>{props.searchresults.errMess}</h4>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
     return (
 
         <div>

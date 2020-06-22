@@ -6,6 +6,20 @@ export const fetchHomepagecards = () => dispatch => {
     dispatch(homepagecardsLoading());
 
     return fetch(baseUrl + 'homepagecards')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+        }
+    )
     .then(response => response.json())
     .then(homepagecards => dispatch(addHomepagecards(homepagecards)));
 };
@@ -29,6 +43,20 @@ export const fetchHomepagecarousel = () => dispatch => {
     dispatch(homepagecarouselLoading());
 
     return fetch(baseUrl + 'homepagecarousel')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+     }
+    )
     .then(response => response.json())
     .then(homepagecarousel => dispatch(addHomepagecarousel(homepagecarousel)));
 };
@@ -52,6 +80,20 @@ export const fetchLearningpage = () => dispatch => {
     dispatch(learningpageLoading());
 
     return fetch(baseUrl + 'learningpage')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+        }
+    )
     .then(response => response.json())
     .then(learningpage => dispatch(addLearningpage(learningpage)));
 };
@@ -75,6 +117,20 @@ export const fetchOnlinepage = () => dispatch => {
     dispatch(onlinepageLoading());
 
     return fetch(baseUrl + 'onlinepage')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+        }
+    )
     .then(response => response.json())
     .then(onlinepage => dispatch(addOnlinepage(onlinepage)));
 };
@@ -98,6 +154,20 @@ export const fetchVirtualpage = () => dispatch => {
     dispatch(virtualpageLoading());
 
     return fetch(baseUrl + 'virtualpage')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+        }
+    )
     .then(response => response.json())
     .then(virtualpage => dispatch(addVirtualpage(virtualpage)));
 };
@@ -122,6 +192,20 @@ export const fetchWhyidpage = () => dispatch => {
     dispatch(whyidpageLoading());
 
     return fetch(baseUrl + 'whyidpage')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+        }
+    )
     .then(response => response.json())
     .then(whyidpage => dispatch(addWhyidpage(whyidpage)));
 };
@@ -146,6 +230,20 @@ export const fetchRegisterpage = () => dispatch => {
     dispatch(registerpageLoading());
 
     return fetch(baseUrl + 'registerpage')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+        }
+    )
     .then(response => response.json())
     .then(registerpage => dispatch(addRegisterpage(registerpage)));
 };
@@ -169,6 +267,20 @@ export const fetchCoursespage = () => dispatch => {
     dispatch(coursespageLoading());
 
     return fetch(baseUrl + 'coursespage')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+    }
+)
     .then(response => response.json())
     .then(coursespage => dispatch(addCoursespage(coursespage)));
 };
@@ -192,6 +304,20 @@ export const fetchCoursespagesidebar = () => dispatch => {
     dispatch(coursespagesidebarLoading());
 
     return fetch(baseUrl + 'coursespagesidebar')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+    }
+)
     .then(response => response.json())
     .then(coursespagesidebar => dispatch(addCoursespagesidebar(coursespagesidebar)));
 };
@@ -215,6 +341,20 @@ export const fetchCoursespagesearchresults = () => dispatch => {
     dispatch(coursespagesearchresultsLoading());
 
     return fetch(baseUrl + 'coursespagesearchresults')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+    }
+)
     .then(response => response.json())
     .then(coursespagesearchresults => dispatch(addCoursespagesearchresults(coursespagesearchresults)));
 };
@@ -238,6 +378,20 @@ export const fetchOnlinepagecards = () => dispatch => {
     dispatch(onlinepagecardsLoading());
 
     return fetch(baseUrl + 'onlinepagecards')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess = new Error(error.message);
+        throw errMess;
+    }
+)
     .then(response => response.json())
     .then(onlinepagecards => dispatch(addOnlinepagecards(onlinepagecards)));
 };
