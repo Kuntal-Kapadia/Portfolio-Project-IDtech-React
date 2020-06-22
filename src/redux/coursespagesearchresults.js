@@ -9,7 +9,7 @@ export const Coursespagesearchresults = (state = {
         case ActionTypes.ADD_COURSESPAGESEARCHRESULTS:
             return {...state, isLoading: false, errMess: null, coursespagesearchresults: action.payload};
         case ActionTypes.COURSESPAGESEARCHRESULTS_LOADING:
-            return {...state, isLoading: true, errMess: null, coursespagesearchresults: {}};
+            return {...state, isLoading: true, errMess: null, coursespagesearchresults: []};
         case ActionTypes.COURSESPAGESEARCHRESULTS_FAILED:
             return {...state, isLoading: false, errMess: action.payload};
         default:

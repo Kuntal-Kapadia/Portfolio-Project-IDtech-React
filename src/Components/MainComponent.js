@@ -55,6 +55,7 @@ class Main extends Component {
         this.props.fetchHomepagecarousel();    
         this.props.fetchLearningpage();
         this.props.fetchOnlinepage();   
+        this.props.fetchOnlinepagecards();
         this.props.fetchVirtualpage();  
         this.props.fetchWhyidpage(); 
         this.props.fetchRegisterpage();

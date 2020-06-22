@@ -7,7 +7,7 @@ function RenderDirectoryItem({onlinepagecard}) {
     
     return (
         <Card>
-            <CardImg width="100%" src={onlinepagecard.image} alt={onlinepagecard.name} />
+            <CardImg width="100%" src={baseUrl+onlinepagecard.image} alt={onlinepagecard.name} />
             <CardBody>
                 <h5><CardTitle>{onlinepagecard.name}</CardTitle></h5>
                 <p><CardText>{onlinepagecard.description}</CardText></p>
@@ -46,7 +46,7 @@ function RenderOnlinepagecards(props){
     //     );
     // } 
     return (
-        <div classname="row">
+        <div className="row">
             {directory}
         </div>)
 }
