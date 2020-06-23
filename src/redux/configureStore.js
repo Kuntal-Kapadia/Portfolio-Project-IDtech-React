@@ -33,8 +33,8 @@ export const ConfigureStore = () => {
             ...createForms({
                 feedbackForm: InitialFeedback
             })
-        }), applyMiddleware(thunk,logger)
+        }), applyMiddleware(thunk)
     );
-        console.log(store.getState());
+
     return store;
 }

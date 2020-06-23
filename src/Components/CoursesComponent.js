@@ -1,62 +1,67 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { Loading } from './LoadingComponent';
+import Checkbox from './Checkbox';
 
-function RenderSidebar(props){
+class RenderSidebar extends Component{
+
+componentWillMount = () => {
+    this.selectedCheckboxes = new Set();
+  }
+
+  toggleCheckbox = label => {
+    if (this.selectedCheckboxes.has(label)) {
+      this.selectedCheckboxes.delete(label);
+    } else {
+      this.selectedCheckboxes.add(label);
+    }
+  }
+
+  handleFormSubmit = formSubmitEvent => {
+    formSubmitEvent.preventDefault();
+
+    for (const checkbox of this.selectedCheckboxes) {
+      console.log(checkbox, 'is selected.');
+    }
+  }
+
+  createCheckbox = label => (
+    <Checkbox
+            label={label}
+            handleCheckboxChange={this.toggleCheckbox}
+            key={label}
+        />
     
-    const directory = props.sidebar.coursespagesidebar.map(sidebaritem => {
+  )
+
+  createCheckboxes = (items) => (  
+        items.map(this.createCheckbox)     
+  )
+    
+
+
+  render() {
+      const directory=  this.props.sidebar.coursespagesidebar.map(filter=>{
         return (
-            <React.Fragment> 
-                    <div className="col-12">
-                      <strong>{sidebaritem.type}</strong>
-                    </div>
-                    <div className="col-12">
-                        {sidebaritem.option1}
-                    </div>
-                    <div className="col-12">
-                        {sidebaritem.option2}
-                    </div>
-                    <div className="col-12">
-                        {sidebaritem.option3}
-                    </div>
-                    <div className="col-12">
-                        {sidebaritem.option4}
-                    </div>
-                    <div className="col-12">
-                        {sidebaritem.option5}
-                    </div>
+            <React.Fragment>
+            <div className="col"><strong>{filter.name}</strong></div>
+                {this.createCheckboxes(filter.checkboxes)}
             </React.Fragment>
         )
-    });
-    if (props.sidebar.isLoading) {
-        return (
-            <div className="container">
-                <div className="row">            
-                    <Loading />
-                </div>
-            </div>
-        );
-    }
-    if (props.sidebar.errMess) {
-        return (
-            <div className="container">
-                <div className="row"> 
-                    <div className="col">
-                        <h4>{props.sidebar.errMess}</h4>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-   
-    return(
-        <div>
-            {directory}
+        });
+    return (
+        <div className="col-sm-12">
+            <form onSubmit={this.handleFormSubmit}>
+              {directory}
+            
+              <button className="btn btn-default" type="submit">Save</button>
+            </form>
         </div>
-    )
-
+    );
+  }
 }
+
 
 function RenderSearchResults(props){
 
@@ -67,7 +72,7 @@ function RenderSearchResults(props){
                     <div className="col-12 col-md-4">
                         <img src={searchresultitem.image} className="img-fluid" alt="Minecraft"/>
                     </div>
-                    <div class="col-12 col-md-7">
+                    <div className="col-12 col-md-7">
                         <span className="course-virtual-badge">{searchresultitem.location}</span>
                         <Link to="/courses" className="course-name">{searchresultitem.title}</Link>
                         <span className="course-details">
@@ -154,7 +159,7 @@ function Courses(props){
             </div>         
             <div className="container">
                 <div className="row row-content">
-                    <div className="col-12 col-md-4 sidebar-canvas" id="sidebar">
+                    <div className="col-12 col-md-3 sidebar-canvas" id="sidebar">
                         <div className="row">
                             <div className="col-12">
                                 <h3>Filter courses</h3>
@@ -167,9 +172,9 @@ function Courses(props){
                             <RenderSidebar sidebar={props.sidebar}/>
                         </div>
                     </div>
-                    <div className="col-12 col-md-8">
-                        <div className="row  row-content justify-content-around ">
-                            <RenderSearchResults searchresults={props.searchresults} />
+                    <div className="col-12 col-md-9">
+                        <div className="row  row-content ">
+                            {/* <RenderSearchResults searchresults={props.searchresults} /> */}
                          </div>
                     </div>
                 </div>    

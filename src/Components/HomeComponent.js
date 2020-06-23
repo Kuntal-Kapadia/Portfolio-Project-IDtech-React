@@ -1,9 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardText,CardTitle, UncontrolledCarousel } from 'reactstrap';
-// import { Card, CardImg, CardBody, CardText,CardTitle } from 'reactstrap';
 import { Loading } from './LoadingComponent';
-// import ControlledCarousel from './ControlledCarouselComponent';
-
 
 
 function RenderDirectoryItem({homepagecard}) {

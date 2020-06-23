@@ -43,13 +43,13 @@ class Header extends Component{
                                         </DropdownToggle>
                                         <DropdownMenu  right>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/online/learning'><strong>Learning and Camps</strong></Link>
+                                                <Link className="dropdown-item" to='/online/learning'><strong>Learning and Camps</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/online/virtual'><strong>Virtual Tech Camps</strong></Link>
+                                                <Link className="dropdown-item" to='/online/virtual'><strong>Virtual Tech Camps</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/online/private'><strong>Private Leassons</strong></Link>
+                                                <Link className="dropdown-item" to='/online/private'><strong>Private Leassons</strong></Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>
@@ -59,16 +59,16 @@ class Header extends Component{
                                         </DropdownToggle>
                                         <DropdownMenu  right>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/courses'><strong>CODING</strong></Link>
+                                                <Link className="dropdown-item" to='/courses'><strong>CODING</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/courses'><strong>GAME DEV</strong></Link>
+                                                <Link className="dropdown-item" to='/courses'><strong>GAME DEV</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/courses'><strong>ROBOTICS</strong></Link>
+                                                <Link className="dropdown-item" to='/courses'><strong>ROBOTICS</strong></Link>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <Link class="dropdown-item" to='/courses'><strong>CREATIVE</strong></Link>
+                                                <Link className="dropdown-item" to='/courses'><strong>CREATIVE</strong></Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                 </UncontrolledDropdown>
