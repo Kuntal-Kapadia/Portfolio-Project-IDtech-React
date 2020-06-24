@@ -456,6 +456,16 @@ Button{
   line-height: 1.5;
   letter-spacing: .5px;
   color: #4c4c4c;
+  display: block;
+  border-bottom: 1px solid #e0e0e0;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
 }
 
 .row-separator {

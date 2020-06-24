@@ -9,7 +9,7 @@ import Learning from './LearningComponent';
 import Virtual from './VirtualComponent';
 import Courses from './CoursesComponent';
 import Register from './RegisterComponent';
-import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults, fetchOnlinepagecards } from '../redux/ActionCreators';
+import { postRegistration, fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults, fetchOnlinepagecards } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -43,7 +43,8 @@ const mapDispatchToProps = {
     fetchCoursespage: ()=> (fetchCoursespage()),
     fetchCoursespagesidebar: ()=> (fetchCoursespagesidebar()),
     fetchCoursespagesearchresults: ()=> (fetchCoursespagesearchresults()),
-    resetFeedbackForm: () => (actions.reset('feedbackForm')),
+    resetRegistrationForm: () => (actions.reset('registrationForm')),
+    postRegistration: (Name, phoneNum, email, password) => (postRegistration(Name, phoneNum, email, password))
 };
 
 
@@ -76,7 +77,7 @@ class Main extends Component {
                     <Route exact path='/online/learning' render={() => <Learning learningpage={this.props.learningpage.learningpage} />} />
                     <Route exact path='/online/virtual' render={() => <Virtual virtualpage={this.props.virtualpage.virtualpage} />} />
                     <Route exact path='/courses' render={() => <Courses coursespage={this.props.coursespage.coursespage} sidebar={this.props.coursespagesidebar} searchresults={this.props.coursespagesearchresults}/>} />
-                    <Route exact path='/register' render={() => <Register registerpage={this.props.registerpage.registerpage} resetFeedbackForm={this.props.resetFeedbackForm}/>} />
+                    <Route exact path='/register' render={() => <Register registerpage={this.props.registerpage.registerpage} resetRegistrationForm={this.props.resetRegistrationForm} postRegistration={this.props.postRegistration}/>} />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />

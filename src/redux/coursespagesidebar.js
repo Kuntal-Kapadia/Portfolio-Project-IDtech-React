@@ -1,5 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-import Checkbox from '../Components/Checkbox';
 
 export const Coursespagesidebar = (state = {
         isLoading: true,

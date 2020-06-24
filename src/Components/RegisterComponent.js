@@ -33,7 +33,8 @@ class Register extends Component{
         handleSubmit(values) {
             console.log('Current state is: ' + JSON.stringify(values));
             alert('Current state is: ' + JSON.stringify(values));
-            this.props.registerpage.resetFeedbackForm();
+            this.props.postRegistration(values);
+            this.props.resetRegistrationForm();
         }
    render(){ 
     return (
@@ -42,10 +43,10 @@ class Register extends Component{
                 <div className="row">
                     <div className = "col-12 m-0 p-0 description text-center">
                         <img className="online-header" src={this.props.registerpage.headerimg} alt="Heading" />
-                        {/* <div className="centered">
-                            <h1>{props.registerpage.headertxth}</h1>
-                            <p>{props.registerpage.headertxtp}</p>
-                        </div> */}
+                        <div className="centered">
+                            <h1>{this.props.registerpage.headertxth}</h1>
+                            <p>{this.props.registerpage.headertxtp}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,7 +58,7 @@ class Register extends Component{
                     <div class="card-img-left d-none d-md-flex"></div>
                     <div className="card-body">
                     <h5 class="card-title text-center">Register</h5>
-                        <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>
+                        <Form model="registrationForm" onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group">
                                 <Label htmlFor="Name"></Label>
                                 <Col>

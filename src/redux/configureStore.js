@@ -11,7 +11,7 @@ import { Registerpage } from './registerpage';
 import { Coursespage } from './coursespage';
 import { Coursespagesidebar } from './coursespagesidebar';
 import { Coursespagesearchresults } from './coursespagesearchresults';
-import { InitialFeedback } from './forms';
+import { InitialRegistrationForm } from './forms';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -31,7 +31,7 @@ export const ConfigureStore = () => {
             coursespagesidebar:Coursespagesidebar, 
             coursespagesearchresults:Coursespagesearchresults, 
             ...createForms({
-                feedbackForm: InitialFeedback
+                registrationForm: InitialRegistrationForm 
             })
         }), applyMiddleware(thunk)
     );

@@ -1,4 +1,4 @@
-export const InitialFeedback = {
+export const InitialRegistrationForm = {
     Name: '',
     phoneNum: '',
     email: '',

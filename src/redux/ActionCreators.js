@@ -409,3 +409,49 @@ export const addOnlinepagecards = onlinepagecards => ({
     type: ActionTypes.ADD_ONLINEPAGECARDS,
     payload: onlinepagecards
 });
+
+//POST REGISTRATION
+export const addRegistration = registration => ({
+    type: ActionTypes.ADD_REGISTRATION,
+    payload: registration
+});
+
+export const postRegistration = (Name, phoneNum, email, password) => dispatch => {
+    
+    const newRegistration = {
+        Name : Name,
+        phoneNum : phoneNum,
+        email:email,
+        password:password
+    };
+        newRegistration.date = new Date().toISOString();
+     
+    return fetch(baseUrl + 'registration', {
+            method: "POST",
+            body: JSON.stringify(newRegistration),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => {
+                if (response.ok) {
+                    return response;
+                } else {
+                    const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                    error.response = response;
+                    throw error;
+                }
+            },
+            error => { throw error; }
+        )
+        .then(response => response.json())
+        .then(response => 
+            {
+                dispatch(addRegistration(response))
+            })
+        .catch(error => {
+            console.log('post registration', error.message);
+            alert('Your registration could not be completed\nError: ' + error.message);
+        });
+};
+

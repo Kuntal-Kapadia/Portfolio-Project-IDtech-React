@@ -5,35 +5,61 @@ import { Loading } from './LoadingComponent';
 import Checkbox from './Checkbox';
 
 class RenderSidebar extends Component{
-
-componentWillMount = () => {
-    this.selectedCheckboxes = new Set();
-  }
-
-  toggleCheckbox = label => {
-    if (this.selectedCheckboxes.has(label)) {
-      this.selectedCheckboxes.delete(label);
-    } else {
-      this.selectedCheckboxes.add(label);
-    }
-  }
-
-  handleFormSubmit = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
-
-    for (const checkbox of this.selectedCheckboxes) {
-      console.log(checkbox, 'is selected.');
-    }
-  }
-
-  createCheckbox = label => (
-    <Checkbox
-            label={label}
-            handleCheckboxChange={this.toggleCheckbox}
-            key={label}
-        />
+    state = {
+        checkboxes: this.props.sidebar.coursespagesidebar.reduce(
+          (options, option) => ({
+            ...options,
+            [option]: false
+          }),
+          {}
+        )
+      };
     
-  )
+      selectAllCheckboxes = isSelected => {
+        Object.keys(this.state.checkboxes).forEach(checkbox => {
+          // BONUS: Can you explain why we pass updater function to setState instead of an object?
+          this.setState(prevState => ({
+            checkboxes: {
+              ...prevState.checkboxes,
+              [checkbox]: isSelected
+            }
+          }));
+        });
+      };
+    
+      selectAll = () => this.selectAllCheckboxes(true);
+    
+      deselectAll = () => this.selectAllCheckboxes(false);
+    
+      handleCheckboxChange = changeEvent => {
+        const { name } = changeEvent.target;
+    
+        this.setState(prevState => ({
+          checkboxes: {
+            ...prevState.checkboxes,
+            [name]: !prevState.checkboxes[name]
+          }
+        }));
+      };
+    
+      handleFormSubmit = formSubmitEvent => {
+        formSubmitEvent.preventDefault();
+    
+        Object.keys(this.state.checkboxes)
+          .filter(checkbox => this.state.checkboxes[checkbox])
+          .forEach(checkbox => {
+            console.log(checkbox, "is selected.");
+          });
+      };
+    
+      createCheckbox = option => (
+        <Checkbox
+          label={option}
+          isSelected={this.state.checkboxes[option]}
+          onCheckboxChange={this.handleCheckboxChange}
+          key={option}
+        />
+      );
 
   createCheckboxes = (items) => (  
         items.map(this.createCheckbox)     
@@ -45,19 +71,25 @@ componentWillMount = () => {
       const directory=  this.props.sidebar.coursespagesidebar.map(filter=>{
         return (
             <React.Fragment>
-            <div className="col"><strong>{filter.name}</strong></div>
+            <div className="col-12"><strong>{filter.name}</strong></div>
                 {this.createCheckboxes(filter.checkboxes)}
             </React.Fragment>
         )
         });
     return (
-        <div className="col-sm-12">
-            <form onSubmit={this.handleFormSubmit}>
-              {directory}
-            
-              <button className="btn btn-default" type="submit">Save</button>
-            </form>
-        </div>
+        <React.Fragment>
+
+                    <h3>Filter courses</h3>
+                    <button className="btn btn-default" onClick={this.deselectAll} type="submit">Reset Filters</button>
+                    
+                    <form onSubmit={this.handleFormSubmit}>
+                    
+                    {directory}
+                    
+                    <button className="btn btn-default" type="submit">Save</button>
+                    </form>
+
+        </React.Fragment>
     );
   }
 }
@@ -72,7 +104,7 @@ function RenderSearchResults(props){
                     <div className="col-12 col-md-4">
                         <img src={searchresultitem.image} className="img-fluid" alt="Minecraft"/>
                     </div>
-                    <div className="col-12 col-md-7">
+                    <div className="col-12 col-md-8">
                         <span className="course-virtual-badge">{searchresultitem.location}</span>
                         <Link to="/courses" className="course-name">{searchresultitem.title}</Link>
                         <span className="course-details">
@@ -124,7 +156,7 @@ function Courses(props){
         <React.Fragment>
             <div className="container-fluid">
                 <div className="row">
-                    <div className = "row m-0 p-0 description text-center">
+                    <div className = "col m-0 p-0 description text-center">
                         <img className="online-header" src={props.coursespage.headerimg} alt="Heading" />
                         <div className="centered">
                             <h1>{props.coursespage.headertxth}</h1>
@@ -160,25 +192,18 @@ function Courses(props){
             <div className="container">
                 <div className="row row-content">
                     <div className="col-12 col-md-3 sidebar-canvas" id="sidebar">
-                        <div className="row">
-                            <div className="col-12">
-                                <h3>Filter courses</h3>
-                                <div className="reset-all" id="reset-all">
-                                    <a href="">Reset filter</a>
-                                </div>
-                            </div>
-                        </div>    
-                        <div className="row">
                             <RenderSidebar sidebar={props.sidebar}/>
                         </div>
-                    </div>
                     <div className="col-12 col-md-9">
-                        <div className="row  row-content ">
-                            {/* <RenderSearchResults searchresults={props.searchresults} /> */}
+                        <div className="row row-content ">
+                            <div className="col">
+                                <h3>Results : {props.searchresults.coursespagesearchresults.length}</h3>
+                            </div>
+                            <RenderSearchResults searchresults={props.searchresults} /> 
                          </div>
                     </div>
                 </div>    
-             </div>
+        </div>
         </React.Fragment>
         )
 }
