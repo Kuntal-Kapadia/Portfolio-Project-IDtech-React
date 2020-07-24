@@ -47,8 +47,6 @@ const mapDispatchToProps = {
     postRegistration: (Name, phoneNum, email, password) => (postRegistration(Name, phoneNum, email, password))
 };
 
-
-
 class Main extends Component {
 
     componentDidMount() {

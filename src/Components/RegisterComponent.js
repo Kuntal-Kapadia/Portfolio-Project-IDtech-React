@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import { Button, Label,  Col, Row  } from 'reactstrap';
 import { Control, Form, Errors} from 'react-redux-form';
+import FacebookLogin from 'react-facebook-login';
 
 
 const required = val => val && val.length;
@@ -33,10 +34,13 @@ class Register extends Component{
         handleSubmit(values) {
             console.log('Current state is: ' + JSON.stringify(values));
             alert('Current state is: ' + JSON.stringify(values));
-            this.props.postRegistration(values);
+            this.props.postRegistration(values.Name,values.phoneNum,values.email,values.password);
             this.props.resetRegistrationForm();
         }
    render(){ 
+    const responseFacebook = (response) => {
+        console.log(response);
+      }
     return (
         <React.Fragment>
             <div className="container-fluid">
@@ -165,9 +169,15 @@ class Register extends Component{
                             </Row>
                             <Row className="form-group">
                                 <Col>
-                                    <Button className="formbutton btn-large btn-block facebook-btn" type="submit" color="primary">
-                                    <i class="fa fa-facebook-f mr-2"></i> Sign up with Facebook
-                                    </Button>
+                                    <FacebookLogin
+                                        appId="823721018162478"
+                                        autoLoad={true}
+                                        fields="name,email,picture"
+                                        callback={responseFacebook}
+                                        cssClass="formbutton btn-large btn-block facebook-btn"
+                                        icon="fa-facebook-f mr-2"
+                                        textButton="Sign Up with Facebook"
+                                    />
                                 </Col>
                             </Row>
                             <Row className="form-group">

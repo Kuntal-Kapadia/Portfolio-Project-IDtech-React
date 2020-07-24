@@ -13,7 +13,7 @@ import { Coursespagesidebar } from './coursespagesidebar';
 import { Coursespagesearchresults } from './coursespagesearchresults';
 import { InitialRegistrationForm } from './forms';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 
 export const ConfigureStore = () => {
