@@ -169,6 +169,13 @@ class Register extends Component{
                             </Row>
                             <Row className="form-group">
                                 <Col>
+                                    <Button className= "formbutton btn-large btn-block facebook-btn" type="submit" color="primary">
+                                    <i class="fa fa-facebook mr-2"></i>Sign up with Facebook
+                                    </Button>
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Col>
                                     <FacebookLogin
                                         appId="823721018162478"
                                         autoLoad={true}
