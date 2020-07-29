@@ -35,7 +35,7 @@ function Footer(props) {
                         <a className="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/company/the-confident-communicator/"><i className="fa fa-linkedin-square"></i></a>
                     </div>
                     <div className="col-3">
-                        <Link to='/home'><img src="/assets/images/logo-id.png" alt="ID"/></Link>
+                        <Link to='/home'><img src="/assets/images/idlogo.png" alt="ID"/></Link>
                     </div>
                 </div>
                 
