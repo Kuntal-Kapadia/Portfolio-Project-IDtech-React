@@ -54,15 +54,16 @@ function Home(props){
                 </div>
             </div>        
         </div>
-        <div className="container-fluid">
+        <div className="container">
             <div className="row row-content">
                 <div className="col-sm-12 text-center">
                     <h2>You get more. A LOT more</h2>
-                    <p >iD Tech is the very best experience built around you—your interests, your skill level, your goals for the future. Each program includes an exclusive package designed for your maximum inspiration and long-term success.</p>
+                    <p >iD Tech is the very best experience built around you—your interests, your skill level, your goals for the future. </p>
+                        <p>Each program includes an exclusive package designed for your maximum inspiration and long-term success.</p>
                     <h3><strong>Your spring and summer tuition includes:</strong></h3>
                 </div>
             </div>
-            <div className="row row-content">
+            <div className="row ">
                 {directory}
             </div>
         </div>

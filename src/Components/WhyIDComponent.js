@@ -15,9 +15,9 @@ function WhyID(props){
                     </div>
                 </div>
             </div>
-            <div class="container page-row-space-content ">
-            <div class="row ">
-                <div class="col-12 col-md-6  ">
+            <div class="container row-content">
+            <div class="row justify-content-end align-items-center">
+                <div class="col-12 col-md-6 ">
                     <div class="content"><h2>When you want the best, it's iD Tech or nothing</h2>
                          <p>With&nbsp;<a href="https://www.idtech.com/about">over 20&nbsp;years of experience</a> and a track record of incredible student outcomes, iD Tech is an investment in your child's future.&nbsp;Whether they're 7, 19, or somewhere in between, we've perfected the system to guide them from total beginner&nbsp;to college-bound pro. Tuition for on-campus summer programs and <a href="/virtual">Virtual Tech Camps</a>&nbsp;includes unparalleled access to expert educators&nbsp;and exclusive tools for long-term success.&nbsp;<strong>It's a total package unlike any other.</strong></p>
                         </div>
@@ -35,7 +35,7 @@ function WhyID(props){
             </div>
         </div>
          
-        <div class="container-fluid">  
+        <div class="container">  
             <div class="row row-content">
                 <div class="col-md-6 justify-content-center">
                     <img className="img-fluid" src={props.whyidpage.img1} alt="First"/>
@@ -48,7 +48,7 @@ function WhyID(props){
                 </div>
             </div>
         </div>   
-        <div class="container-fluid"> 
+        <div class="container"> 
             <div class="row row-content ">
                 <div class="col-md-6">
                     <h2>Tech rockstar instructors</h2>
@@ -62,7 +62,7 @@ function WhyID(props){
             </div>
         </div>
 
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row row-content">
                     <div class="col-md-6">
                         <img className="img-fluid" src={props.whyidpage.img2} alt="Second"/>
@@ -73,7 +73,7 @@ function WhyID(props){
                     </div>
                 </div>
             </div>    
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row row-content ">
                     <div class="col-md-6">
                         <h2>Gamified learning for long-term success</h2>
@@ -85,7 +85,7 @@ function WhyID(props){
                 </div> 
             </div>
             
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row row-content ">
                     <div class="col-md-6">
                         <h3>Monthly online iD Master Classes&nbsp;($300 value)</h3>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { actions } from 'react-redux-form';
+
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
@@ -9,10 +9,13 @@ import Learning from './LearningComponent';
 import Virtual from './VirtualComponent';
 import Courses from './CoursesComponent';
 import Register from './RegisterComponent';
-import { postRegistration, fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults, fetchOnlinepagecards } from '../redux/ActionCreators';
+
+import { fetchHomepagecards, fetchHomepagecarousel, fetchLearningpage, fetchOnlinepage, fetchVirtualpage, fetchWhyidpage, fetchRegisterpage, fetchCoursespage, fetchCoursespagesidebar, fetchCoursespagesearchresults, fetchOnlinepagecards, postRegistration, } from '../redux/ActionCreators';
+
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { actions } from 'react-redux-form';
 
 const mapStateToProps = state => {
     return {

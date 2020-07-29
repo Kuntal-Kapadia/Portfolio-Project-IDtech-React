@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import { Button, Label,  Col, Row  } from 'reactstrap';
 import { Control, Form, Errors} from 'react-redux-form';
-import FacebookLogin from 'react-facebook-login';
+// import FacebookLogin from 'react-facebook-login';
 
 
 const required = val => val && val.length;
@@ -38,9 +38,9 @@ class Register extends Component{
             this.props.resetRegistrationForm();
         }
    render(){ 
-    const responseFacebook = (response) => {
-        console.log(response);
-      }
+    // const responseFacebook = (response) => {
+    //     console.log(response);
+    //   }
     return (
         <React.Fragment>
             <div className="container-fluid">
@@ -174,7 +174,7 @@ class Register extends Component{
                                     </Button>
                                 </Col>
                             </Row>
-                            <Row className="form-group">
+                            {/* <Row className="form-group">
                                 <Col>
                                     <FacebookLogin
                                         appId="823721018162478"
@@ -186,7 +186,7 @@ class Register extends Component{
                                         textButton="Sign Up with Facebook"
                                     />
                                 </Col>
-                            </Row>
+                            </Row> */}
                             <Row className="form-group">
                                 <Col>
                                     <Button className= "formbutton btn-large btn-block google-btn" type="submit" color="primary">
