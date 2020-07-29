@@ -33,7 +33,7 @@ class Register extends Component{
      
         handleSubmit(values) {
             console.log('Current state is: ' + JSON.stringify(values));
-            alert('Current state is: ' + JSON.stringify(values));
+            // alert('Current state is: ' + JSON.stringify(values));
             this.props.postRegistration(values.Name,values.phoneNum,values.email,values.password);
             this.props.resetRegistrationForm();
         }
